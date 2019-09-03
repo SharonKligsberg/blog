@@ -1,0 +1,14 @@
+defaults: &defaults
+  adapter: mysql2
+  encoding: utf8
+  pool: 30
+  reconnect: true
+  host: <%= ENV['MYSQL_HOST'] || '127.0.0.1' %>
+  port: <%= ENV['MYSQL_PORT'] || '3306' %>
+  database: <%= ENV['MYSQL_DATABASE'] || 'blog2' %>
+  username: <%= ENV['MYSQL_USER'] || 'root' %>
+  password: <%= ENV['MYSQL_PASSWORD'] || 'vladopen' %>
+  connect_timeout: <%= ENV['MYSQL_CONNECT_TIMEOUT'] || 3 %>
+
+development:
+  <<: *defaults
